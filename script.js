@@ -38,6 +38,10 @@
           topbar.classList.toggle('menu-open', !expanded);
         });
 
+        const contactTriggers = document.querySelectorAll('.contact-trigger');
+        const contactModal = document.getElementById('contact-modal');
+        const modalClose = document.getElementById('modal-close');
+
         navLinks.forEach((link) => {
           link.addEventListener('click', () => {
             if (topbar.classList.contains('menu-open')) {
@@ -47,28 +51,56 @@
           });
         });
 
+        const openContactModal = () => {
+          contactModal.classList.add('open');
+          contactModal.setAttribute('aria-hidden', 'false');
+          document.body.style.overflow = 'hidden';
+        };
+
+        const closeContactModal = () => {
+          contactModal.classList.remove('open');
+          contactModal.setAttribute('aria-hidden', 'true');
+          document.body.style.overflow = '';
+        };
+
+        contactTriggers.forEach((trigger) => {
+          trigger.addEventListener('click', (event) => {
+            event.preventDefault();
+            openContactModal();
+            if (topbar.classList.contains('menu-open')) {
+              topbar.classList.remove('menu-open');
+              navToggle.setAttribute('aria-expanded', 'false');
+            }
+          });
+        });
+
+        modalClose.addEventListener('click', closeContactModal);
+
+        contactModal.addEventListener('click', (event) => {
+          if (event.target === contactModal) {
+            closeContactModal();
+          }
+        });
+
+        window.addEventListener('keydown', (event) => {
+          if (event.key === 'Escape' && contactModal.classList.contains('open')) {
+            closeContactModal();
+          }
+        });
+
         // Active link based on scroll position
         const updateActiveLink = () => {
           const sections = document.querySelectorAll('section[id]');
-          const scrollTop = window.scrollY + 200;
-
-          let active = null;
+          const scrollPosition = window.scrollY + 170;
+          let active = sections.length > 0 ? sections[0].getAttribute('id') : null;
 
           sections.forEach((section) => {
             const top = section.offsetTop;
-            const bottom = top + section.offsetHeight;
-
-            if (scrollTop >= top && scrollTop <= bottom) {
+            if (scrollPosition >= top) {
               active = section.getAttribute('id');
             }
           });
 
-          // Si no encontró nada, usa el primer enlace visible
-          if (!active && sections.length > 0) {
-            active = sections[0].getAttribute('id');
-          }
-
-          // Actualizar todos los links
           navLinks.forEach((link) => {
             link.classList.remove('active');
             if (link.getAttribute('href') === `#${active}`) {
@@ -84,10 +116,12 @@
         let ticking = false;
         window.addEventListener('scroll', () => {
           if (!ticking) {
-            window.requestAnimationFrame(updateActiveLink);
+            window.requestAnimationFrame(() => {
+              updateActiveLink();
+              ticking = false;
+            });
             ticking = true;
           }
-          ticking = false;
         }, { passive: true });
 
         let savedLang = 'en';

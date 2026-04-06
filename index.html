@@ -27,7 +27,7 @@
             <a href="#skills"><span data-lang-inline="en" class="active">Skills</span><span data-lang-inline="es">Habilidades</span></a>
             <a href="#experience"><span data-lang-inline="en" class="active">Experience</span><span data-lang-inline="es">Experiencia</span></a>
             <a href="#freelance"><span data-lang-inline="en" class="active">Freelance</span><span data-lang-inline="es">Freelance</span></a>
-            <a href="#contact"><span data-lang-inline="en" class="active">Contact</span><span data-lang-inline="es">Contacto</span></a>
+            <a href="#contact" class="contact-trigger"><span data-lang-inline="en" class="active">Contact</span><span data-lang-inline="es">Contacto</span></a>
           </nav>
           <div class="lang-switch" aria-label="Language selector">
             <button id="btn-en" class="lang-btn active" type="button" aria-pressed="true">EN</button>
@@ -58,8 +58,8 @@
             </p>
             <div class="hero-actions">
               <a class="btn btn-primary" href="#experience"><span data-lang-inline="en" class="active">View experience</span><span data-lang-inline="es">Ver experiencia</span></a>
-              <a class="btn btn-secondary" href="#freelance"><span data-lang-inline="en" class="active">View portfolio</span><span data-lang-inline="es">Ver portfolio</span></a>
-              <a class="btn btn-secondary" href="#contact"><span data-lang-inline="en" class="active">Contact</span><span data-lang-inline="es">Contacto</span></a>
+              <a class="btn btn-secondary" href="https://angelcidoncha.es" target="_blank" rel="noopener noreferrer"><span data-lang-inline="en" class="active">View portfolio</span><span data-lang-inline="es">Ver portfolio</span></a>
+              <a class="btn btn-secondary contact-trigger" href="#contact"><span data-lang-inline="en" class="active">Contact</span><span data-lang-inline="es">Contacto</span></a>
             </div>
           </div>
         </div>
@@ -341,63 +341,48 @@
           </div>
         </div>
       </section>
-      <section id="contact" class="contact-section">
-        <div class="container">
-          <div class="contact-header-box">
-            <div class="contact-header">
-              <h2 class="section-title">
-                <span data-lang="en" class="active">Contact</span>
-                <span data-lang="es">Contacto</span>
-              </h2>
-            </div>
+    </main>
+
+    <div id="contact-modal" class="modal-overlay" aria-hidden="true" role="dialog" aria-modal="true">
+      <div class="modal" role="document">
+        <button id="modal-close" type="button" class="modal-close" aria-label="Close contact popup">×</button>
+        <div class="modal-header">
+          <h2><span data-lang="en" class="active">Contact</span><span data-lang="es">Contacto</span></h2>
+          <p><span data-lang="en" class="active">Reach out via email, phone, website or LinkedIn.</span><span data-lang="es">Contacta por email, teléfono, web o LinkedIn.</span></p>
+        </div>
+        <div class="contact-grid modal-contact-grid">
+          <div class="contact-card">
+            <h3 class="contact-label">
+              <span data-lang="en" class="active">Phone</span>
+              <span data-lang="es">Teléfono</span>
+            </h3>
+            <p class="contact-info"><a href="tel:+34620007007">(+34) 620 007 007</a></p>
           </div>
-          <div class="contact-grid">
-            <div class="contact-card">
-              <h3 class="contact-label">
-                <span data-lang="en" class="active">Location</span>
-                <span data-lang="es">Ubicación</span>
-              </h3>
-              <p class="contact-info">Madrid, Spain</p>
-            </div>
-            <div class="contact-card">
-              <h3 class="contact-label">
-                <span data-lang="en" class="active">Phone</span>
-                <span data-lang="es">Teléfono</span>
-              </h3>
-              <p class="contact-info"><a href="tel:+34620007007">(+34) 620 007 007</a></p>
-            </div>
-            <div class="contact-card">
-              <h3 class="contact-label">
-                <span data-lang="en" class="active">Email</span>
-                <span data-lang="es">Email</span>
-              </h3>
-              <p class="contact-info"><a href="mailto:angel@angelcidoncha.es">angel@angelcidoncha.es</a></p>
-            </div>
-            <div class="contact-card">
-              <h3 class="contact-label">
-                <span data-lang="en" class="active">Website</span>
-                <span data-lang="es">Website</span>
-              </h3>
-              <p class="contact-info"><a href="https://www.angelcidoncha.es" target="_blank">www.angelcidoncha.es</a></p>
-            </div>
-            <div class="contact-card">
-              <h3 class="contact-label">
-                <span data-lang="en" class="active">Portfolio</span>
-                <span data-lang="es">Portfolio</span>
-              </h3>
-              <p class="contact-info"><a href="https://angelcidoncha.es" target="_blank">angelcidoncha.es</a></p>
-            </div>
-            <div class="contact-card">
-              <h3 class="contact-label">
-                <span data-lang="en" class="active">LinkedIn</span>
-                <span data-lang="es">LinkedIn</span>
-              </h3>
-              <p class="contact-info"><a href="#" target="_blank"><span data-lang="en" class="active">Add your LinkedIn URL here</span><span data-lang="es">Añade aquí tu URL de LinkedIn</span></a></p>
-            </div>
+          <div class="contact-card">
+            <h3 class="contact-label">
+              <span data-lang="en" class="active">Email</span>
+              <span data-lang="es">Email</span>
+            </h3>
+            <p class="contact-info"><a href="mailto:angel@angelcidoncha.es">angel@angelcidoncha.es</a></p>
+          </div>
+          <div class="contact-card">
+            <h3 class="contact-label">
+              <span data-lang="en" class="active">Website</span>
+              <span data-lang="es">Website</span>
+            </h3>
+            <p class="contact-info"><a href="https://www.angelcidoncha.es" target="_blank" rel="noopener noreferrer">www.angelcidoncha.es</a></p>
+          </div>
+          <div class="contact-card">
+            <h3 class="contact-label">
+              <span data-lang="en" class="active">LinkedIn</span>
+              <span data-lang="es">LinkedIn</span>
+            </h3>
+            <p class="contact-info"><a href="https://www.linkedin.com/in/angelcidoncha/" target="_blank" rel="noopener noreferrer">linkedin.com/in/angelcidoncha</a></p>
           </div>
         </div>
-      </section>
-    </main>
+      </div>
+    </div>
+
     <footer class="footer">
       <div class="container footer-card">
         <div>
@@ -408,12 +393,11 @@
           </div>
         </div>
         <div style="display:flex; gap:12px; flex-wrap:wrap;">
-          <a class="btn btn-secondary" href="#freelance"><span data-lang-inline="en" class="active">View portfolio</span><span data-lang-inline="es">Ver portfolio</span></a>
+          <a class="btn btn-secondary" href="https://angelcidoncha.es" target="_blank" rel="noopener noreferrer"><span data-lang-inline="en" class="active">View portfolio</span><span data-lang-inline="es">Ver portfolio</span></a>
           <a class="btn btn-primary" href="mailto:angel@angelcidoncha.es"><span data-lang-inline="en" class="active">Get in touch</span><span data-lang-inline="es">Contactar</span></a>
         </div>
       </div>
     </footer>
    <script src="script.js"></script>
 </body>
-  </body>
 </html>
