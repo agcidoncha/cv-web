@@ -17,7 +17,12 @@
       <div class="container topbar-inner">
         <a href="#home" class="brand">Ángel G. Cidoncha</a>
         <div class="topbar-right">
-          <nav class="nav">
+          <button id="nav-toggle" class="nav-toggle" aria-expanded="false" aria-label="Open menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+          <nav id="main-nav" class="nav">
             <a class="active" href="#profile"><span data-lang-inline="en" class="active">Profile</span><span data-lang-inline="es">Perfil</span></a>
             <a href="#skills"><span data-lang-inline="en" class="active">Skills</span><span data-lang-inline="es">Habilidades</span></a>
             <a href="#experience"><span data-lang-inline="en" class="active">Experience</span><span data-lang-inline="es">Experiencia</span></a>
@@ -26,7 +31,8 @@
           </nav>
           <div class="lang-switch" aria-label="Language selector">
             <button id="btn-en" class="lang-btn active" type="button" aria-pressed="true">EN</button>
-            <button id="btn-es" class="lang-btn" type="button" aria-pressed="false">ES</button>          </div>
+            <button id="btn-es" class="lang-btn" type="button" aria-pressed="false">ES</button>
+          </div>
         </div>
       </div>
     </header>
